@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+import{UserModule} from './user/user.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { HttpModule } from '@angular/http'
+
 
 @NgModule({
   declarations: [
@@ -12,7 +17,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserModule,
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

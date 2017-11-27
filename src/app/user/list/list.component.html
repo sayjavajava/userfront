@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <section>
+        <header class="header">
+          <div class="row">
+            <div class="col-md-4">
+              
+            </div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-2">
+<button class="btn btn-primary" (click)="newProductPage()">new Product</button>
+            </div>
+          </div>
+
+        </header>
+      </section>
+
+      <section class="main">
+
+        <table class="table-responsive table-striped">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr *ngFor="let user of users">
+            <th scope="row">{{user.id}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.price}}</td>
+            <td>{{user.description}}</td>
+            
+            <td>
+              
+                <button type="button" class="btn btn-success" (click)="editUserPage(user)" item-width="10px">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="deleteUser(user)" item-width="10px">Delete</button>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+</div>

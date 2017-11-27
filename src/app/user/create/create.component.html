@@ -1,0 +1,92 @@
+ <div class="container">
+    <div class="row">
+      <div class="col">
+        <section>
+          <form  [formGroup]="formdata" (ngSubmit)="act(formdata)" autocomplete="off">
+            <fieldset>
+              <div class="form-group">
+                <label> Name</label>
+                <input type="text"
+                       class="form-control"
+                       formControlName="name">
+              </div>
+              <div class="alert" *ngIf="!formdata.controls['name'].valid && formdata.controls['name'].touched">{{ titleAlert }}</div>
+              
+
+              <div class="form-group">
+                <label> price</label>
+                <input type="text"
+                       class="form-control"
+                       formControlName="price">
+              </div>
+              <div class="alert" *ngIf="!formdata.controls['price'].valid && formdata.controls['price'].touched">{{ pricealert }}</div>
+              
+            </fieldset>  
+  
+            <div class="form-group">
+              <label>Email</label>
+              <input type="text"
+                     class="form-control"
+                     formControlName="description">
+            </div>
+            <div class="alert" *ngIf="!formdata.controls['description'].valid && formdata.controls['description'].touched">You must use email pattern .</div>
+            <div class="form-group" style="font-size:13px;color:coral;text-align:left ">
+            <label for="validate">Minimum of 3 Characters name and price number bw 2-4</label>
+            <input type="checkbox" name="validate" formControlName="validate" value="1"> On
+          </div>
+            <button type="submit" class="btn btn-primary"  [disabled]="!formdata.valid" >Submit</button>
+            <button type="button" class="btn btn-warning" (click)="redirectUserPage()">Cancel</button>
+            <pre>{{formdata.value | json}}</pre>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div> 
+ 
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+  <div *ngIf="!name; else forminfo">
+    <form [formGroup]="formdata" (ngSubmit)="act()">
+      <div class="form-container">
+        <div class="row columns">
+  
+          <h1>My Reactive Form</h1>
+  
+          <label>Name
+            <input type="text" formControlName="name">
+          </label>
+          <div class="alert" *ngIf="!formdata.controls['name'].valid && formdata.controls['name'].touched">{{ titleAlert }}</div>
+  
+          <label>price
+            <input type="text" formControlName="price">
+          </label>
+          <div class="alert" *ngIf="!formdata.controls['price'].valid && formdata.controls['price'].touched">{{ titleAlert }}</div>
+  
+
+          <label>Description
+            <textarea formControlName="description"></textarea>
+          </label>
+          <div class="alert" *ngIf="!formdata.controls['description'].valid && formdata.controls['description'].touched">You must specify a description that's between 30 and 500 characters.</div>
+  
+  
+          <label for="validate">Minimum of 3 Characters</label>
+          <input type="checkbox" name="validate" formControlName="validate" value="1"> On
+  
+          <input type="submit" class="button expanded" value="Submit Form" [disabled]="!formdata.valid">
+        </div>
+      </div>
+    </form>
+  </div> -->
+  
+
+
